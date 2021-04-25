@@ -8,6 +8,9 @@
 .navbar {
   background-color: #3E3C3C;
   height: 72px;
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -47,7 +50,7 @@
 .navbar .navbar-menu .nav-menu-item .nav-menu-link {
   color: white;
   text-decoration: none;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-weight: bold;
 }
 
@@ -87,16 +90,242 @@
   width: 40%;
 }
 
-.about .about-me h1 {
+.about .about-me h2 {
   color: #F55800;
   font-size: 4rem;
-  font-family: serif;
+  font-weight: 400;
+  font-family: 'Crete Round', serif;
 }
 
 .about .about-me p {
   color: white;
   font-size: 1.5rem;
-  font-family: sans-serif;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 2rem;
+}
+
+.about .about-me .about-button {
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  color: white;
+  background-color: #F55800;
+  padding: 0.7rem;
+}
+
+.about .about-me .about-button:hover {
+  background-color: #1C1A19;
+  border: 2px solid #F55800;
+}
+
+.portfolio h2 {
+  color: #091E42;
+  font-family: 'Crete Round', serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  padding-left: 4rem;
+  padding-top: 2rem;
+}
+
+.portfolio .projects-container {
+  padding: 4rem;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  gap: 20px 20px;
+      grid-template-areas: ". . ." ". . .";
+}
+
+.portfolio .projects-container .proj {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding-top: 15rem;
+}
+
+.portfolio .projects-container .proj .proj-title, .portfolio .projects-container .proj .proj-details {
+  color: white;
+  margin: 10px;
+}
+
+.portfolio .projects-container .proj .proj-title {
+  font-family: 'Crete Round', sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.portfolio .projects-container .proj .proj-details {
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.portfolio .projects-container .proj .proj-tags {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 1rem;
+}
+
+.portfolio .projects-container .proj .proj-tags span {
+  color: white;
+  font-family: 'Inter', sans-serif;
+  background: rgba(255, 255, 255, 0.24);
+  padding: 0.5rem;
+  text-align: center;
+  margin: 0.5rem;
+}
+
+.portfolio .projects-container .project-1 {
+  background: linear-gradient(179.35deg, rgba(38, 38, 38, 0) 0.85%, rgba(38, 38, 38, 0.9) 84%), url(../images/ss1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.portfolio .projects-container .project-2 {
+  background: linear-gradient(179.35deg, rgba(38, 38, 38, 0) 0.85%, rgba(38, 38, 38, 0.9) 84%), url(../images/RED.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.portfolio .projects-container .project-3 {
+  background: linear-gradient(179.35deg, rgba(38, 38, 38, 0) 0.85%, rgba(38, 38, 38, 0.9) 84%), url(../images/tic-tac-toe.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.portfolio .projects-container .project-4 {
+  background: linear-gradient(179.35deg, rgba(38, 38, 38, 0) 0.85%, rgba(38, 38, 38, 0.9) 84%), url(../images/get-top-anime.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.portfolio .projects-container .project-5 {
+  background: linear-gradient(179.35deg, rgba(38, 38, 38, 0) 0.85%, rgba(38, 38, 38, 0.9) 84%), url(../images/screenshot-micro-reddit.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #1C1A19;
+  padding: 2rem;
+}
+
+.skills .sheader-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 2rem;
+}
+
+.skills .sheader-container svg {
+  margin-right: 0.5rem;
+}
+
+.skills h2 {
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 32px;
+}
+
+.skills ul {
+  list-style: none;
+  height: 30vh;
+}
+
+.skills ul li {
+  color: white;
+  padding: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 22px;
+}
+
+.contact {
+  padding: 8rem;
+}
+
+.contact .contact-form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  list-style: none;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contact .contact-form-container .contact-text {
+  font-family: 'Inter', sans-serif;
+  color: #262626;
+  font-size: 40px;
+  font-weight: bold;
+  width: 30%;
+}
+
+.contact .contact-form-container form {
+  font-family: 'Inter', sans-serif;
+}
+
+.contact .contact-form-container form input[type=text], .contact .contact-form-container form [type=email], .contact .contact-form-container form textarea {
+  padding: 20px;
+  margin: 15px 0;
+  border: 0;
+  border-bottom: 1px solid #DBD8D7;
+  width: 50rem;
+  font-size: 15px;
+}
+
+.contact .contact-form-container form textarea {
+  background-color: #FBF8F7;
+  padding-bottom: 10rem;
+}
+
+.contact .contact-form-container form button {
+  padding: 10px;
+  font-size: 17px;
+  background-color: #F55800;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  border: 0;
 }
 
 .foot-bar ul {

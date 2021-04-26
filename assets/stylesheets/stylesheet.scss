@@ -1,341 +1,375 @@
-$primary-colour: #F55800;
-$secondary-colour:  #505F79;
+$primary-colour: #f55800;
+$secondary-colour: #505f79;
 $main-text-colour: white;
-$bg-colour: #1C1A19;
+$bg-colour: #1c1a19;
 
 @mixin flexCenter($direction) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: $direction;
+  align-items: center;
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
 }
 
 @mixin flex($direction, $justify, $align) {
-    display: flex;
-    flex-direction: $direction;
-    list-style: none;
-    justify-content: $justify;
-    align-items: $align;
+  align-items: $align;
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  list-style: none;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
 }
 
 .navbar {
-    background-color: #3E3C3C;
-    height: 5rem;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    @include flex(column, space-around, flex-end);
-    .navbar-menu {
-        @include flex(row, space-between, center);
-        .nav-menu-item {
-            padding: 0.7rem;
-            .nav-menu-link {
-                color: $main-text-colour;
-                text-decoration: none;
-                font-family: 'Inter', sans-serif;
-                font-weight: bold;
-            }
-        }
+  @include flex(column, space-around, flex-end);
+
+  background-color: #3e3c3c;
+  height: 5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  .navbar-menu {
+    @include flex(row, space-between, center);
+
+    .nav-menu-item {
+      padding: 0.7rem;
+
+      .nav-menu-link {
+        color: $main-text-colour;
+        font-family: 'Inter', sans-serif;
+        font-weight: bold;
+        text-decoration: none;
+      }
     }
+  }
 }
 
 .about {
-    @include flex(row, space-between, center);
-    background-color: #1C1A19;
+  @include flex(row, space-between, center);
+
+  background-color: #1c1a19;
+
+  .social-media-links {
+    list-style: none;
+    padding-left: 2.5rem;
+
+    a {
+      color: $main-text-colour;
+
+      .fab {
+        font-size: 2.8rem;
+        padding: 0.5rem;
+      }
+    }
+  }
+
+  .about-me {
+    width: 40%;
+
+    h2 {
+      color: $primary-colour;
+      font-family: 'Crete Round', serif;
+      font-size: 4rem;
+      font-weight: 400;
+    }
+
+    p {
+      color: $main-text-colour;
+      font-family: 'Inter', sans-serif;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .about-button {
+      background-color: $primary-colour;
+      color: $main-text-colour;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 0.7rem;
+      text-decoration: none;
+    }
+
+    .about-button:hover {
+      background-color: #1c1a19;
+      border: 2px solid $primary-colour;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2rem;
+    width: 100%;
+
     .social-media-links {
-        list-style: none;
-        padding-left: 2.5rem;
-        a {
-            color: $main-text-colour;
-            .fab {
-                font-size: 2.8rem;
-                padding: 0.5rem;
-            }
-        }
+      align-items: flex-start;
+      display: flex;
+      flex-direction: row;
+      margin-top: 8rem;
+      padding-left: 0;
+    }
+
+    .side-svg {
+      display: none;
     }
 
     .about-me {
-        width: 40%;
-        h2 {
-            color: $primary-colour;
-            font-size: 4rem;
-            font-weight: 400;
-            font-family: 'Crete Round', serif;
-        }
-
-        p {
-            color: $main-text-colour;
-            font-size: 1.5rem;
-            font-family: 'Inter', sans-serif;
-            margin-bottom: 2rem;
-        }
-
-        .about-button {
-            text-decoration: none;
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 1rem;
-            color: $main-text-colour;
-            background-color: $primary-colour;
-            padding: 0.7rem;
-        }
-
-        .about-button:hover {
-            background-color: #1C1A19;
-            border: 2px solid $primary-colour;
-
-        }
+      width: 80%;
     }
-
-    @media screen and (max-width: 1024px) {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        padding-bottom: 2rem;
-        .social-media-links {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            padding-left: 0;
-            margin-top: 8rem;
-        }
-        .side-svg {
-            display: none;
-        }
-
-        .about-me {
-            width: 80%;
-        }
-    }
+  }
 }
 
 .portfolio {
-    h2 {
-        color:#091E42;
-        font-family: 'Crete Round', serif;
-        font-size: 2.5rem;
+  h2 {
+    color: #091e42;
+    font-family: 'Crete Round', serif;
+    font-size: 2.5rem;
+    font-weight: 400;
+    padding-left: 2.5rem;
+    padding-top: 2rem;
+  }
+
+  .projects-container {
+    display: grid;
+    gap: 20px 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 2.5rem;
+
+    .proj {
+      @include flex(column, space-between, flex-start);
+
+      padding-top: 10rem;
+
+      .proj-title,
+      .proj-details {
+        color: $main-text-colour;
+        margin: 10px;
+      }
+
+      .proj-title {
+        font-family: 'Crete Round', sans-serif;
+        font-size: 32px;
         font-weight: 400;
-        padding-left: 2.5rem;
-        padding-top: 2rem;
+      }
+
+      .proj-details {
+        font-family: 'Inter', sans-serif;
+        font-size: 17px;
+        font-weight: 400;
+        margin-bottom: 1rem;
+      }
+
+      .proj-tags {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+
+        span {
+          background: rgba(255, 255, 255, 0.24);
+          color: $main-text-colour;
+          font-family: 'Inter', sans-serif;
+          margin: 0.5rem;
+          padding: 0.5rem;
+          text-align: center;
+        }
+
+        .lang-tools {
+          display: flex;
+          flex-direction: row;
+        }
+
+        .links {
+          display: flex;
+          flex-direction: row;
+
+          .btn-link {
+            background-color: $primary-colour;
+            border-style: none;
+            margin: 0.5rem;
+            padding: 0.5rem;
+          }
+
+          .btn-link:hover {
+            background: none;
+            border: 2px solid $primary-colour;
+          }
+
+          a {
+            color: $main-text-colour;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            font-weight: 400;
+            text-decoration: none;
+          }
+        }
+      }
     }
-    
+
+    .project-1 {
+      background: linear-gradient(179.35deg, rgba(38, 38, 38, 0) 0.85%, rgba(38, 38, 38, 0.9) 84%), url(../images/ss1.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .project-2 {
+      background: linear-gradient(179.35deg, rgba(38, 38, 38, 0) 0.85%, rgba(38, 38, 38, 0.9) 84%), url(../images/RED.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .project-3 {
+      background: linear-gradient(179.35deg, rgba(38, 38, 38, 0) 0.85%, rgba(38, 38, 38, 0.9) 84%), url(../images/tic-tac-toe.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .project-4 {
+      background: linear-gradient(179.35deg, rgba(38, 38, 38, 0) 0.85%, rgba(38, 38, 38, 0.9) 84%), url(../images/get-top-anime.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    .project-5 {
+      background: linear-gradient(179.35deg, rgba(38, 38, 38, 0) 0.85%, rgba(38, 38, 38, 0.9) 84%), url(../images/screenshot-micro-reddit.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+
+  @media screen and (max-width: 360px) {
+    .portfolio-head {
+      padding-left: 1rem;
+    }
+
     .projects-container {
-        padding: 2.5rem;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px 20px;
-
-        .proj {
-            @include flex(column, space-between, flex-start);
-            padding-top: 10rem;
-            .proj-title, .proj-details {
-                color: $main-text-colour;
-                margin: 10px;
-            }
-
-            .proj-title {
-                font-family: 'Crete Round', sans-serif;
-                font-size: 32px;
-                font-weight: 400;
-            }
-
-            .proj-details {
-                font-family: 'Inter', sans-serif;
-                font-size: 17px;
-                font-weight: 400;
-                margin-bottom: 1rem;
-            }
-
- 
-   
-            .proj-tags {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                width: 100%;
-                span {
-                    color: $main-text-colour;
-                    font-family: 'Inter', sans-serif;
-                    background: rgba(255, 255, 255, 0.24);
-                    padding: 0.5rem;
-                    text-align: center;
-                    margin: 0.5rem;
-                }
-
-                .lang-tools {
-                    display: flex;
-                    flex-direction: row;
-                }
-
-                .links {
-                    display: flex;
-                    flex-direction: row;
-                    .btn-link {
-                        padding: 0.5rem;
-                        margin: 0.5rem;
-                        background-color: $primary-colour;
-                        border-style: none;
-                    }
-
-                    .btn-link:hover {
-                        background: none;
-                        border: 2px solid $primary-colour;
-                    }
-
-                    a {
-                        color: $main-text-colour;
-                        font-family: 'Inter', sans-serif;
-                        font-size: 16px;
-                        font-weight: 400;
-                        text-decoration: none;
-                    }
-                }
-            }
-        }
-
-        .project-1 {
-            background: linear-gradient(179.35deg, rgba(38, 38, 38, 0) 0.85%, rgba(38, 38, 38, 0.9) 84%), url(../images/ss1.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        .project-2 {
-            background: linear-gradient(179.35deg, rgba(38, 38, 38, 0) 0.85%, rgba(38, 38, 38, 0.9) 84%), url(../images/RED.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        .project-3 {
-            background: linear-gradient(179.35deg, rgba(38, 38, 38, 0) 0.85%, rgba(38, 38, 38, 0.9) 84%), url(../images/tic-tac-toe.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        .project-4 {
-            background: linear-gradient(179.35deg, rgba(38, 38, 38, 0) 0.85%, rgba(38, 38, 38, 0.9) 84%), url(../images/get-top-anime.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-
-        .project-5 {
-            background: linear-gradient(179.35deg, rgba(38, 38, 38, 0) 0.85%, rgba(38, 38, 38, 0.9) 84%), url(../images/screenshot-micro-reddit.png);
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
+      padding: 1rem;
+      padding-left: 10px;
     }
+  }
 }
 
 .skills {
-    @include flex(row, space-around, center);
-    background-color: #1C1A19;
-    padding: 2rem;
+  @include flex(row, space-around, center);
 
-    .sheader-container {
-        display: flex;
-        align-items: center;
-        margin-bottom: 2rem;
-        svg {
-            margin-right: 0.5rem;
-        }
-    }
+  background-color: #1c1a19;
+  padding: 2rem;
 
-    h2 {
-        color: $main-text-colour;
-        font-family: 'Inter', sans-serif;
-        font-size: 32px;
-    }
+  .sheader-container {
+    align-items: center;
+    display: flex;
+    margin-bottom: 2rem;
 
-    ul {
-        list-style: none;
-        height: 30vh;
-        li {
-            color: $main-text-colour;
-            padding: 0.5rem;
-            font-family: 'Inter', sans-serif;
-            font-size: 22px;
-        }
+    svg {
+      margin-right: 0.5rem;
     }
+  }
 
-    @media screen and (max-width: 1024px) { 
-        @include flexCenter(column)
+  h2 {
+    color: $main-text-colour;
+    font-family: 'Inter', sans-serif;
+    font-size: 32px;
+  }
+
+  ul {
+    height: 30vh;
+    list-style: none;
+
+    li {
+      color: $main-text-colour;
+      font-family: 'Inter', sans-serif;
+      font-size: 22px;
+      padding: 0.5rem;
     }
+  }
+
+  @media screen and (max-width: 1024px) {
+    @include flexCenter(column);
+
+    padding-bottom: 4rem;
+  }
 }
 
 .contact {
-    @include flex(row, space-around, center);
-    padding-bottom: 1rem;
+  @include flex(row, space-around, center);
+
+  padding-bottom: 1rem;
+
+  .contact-text {
+    color: #262626;
+    font-family: 'Inter', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    width: 30%;
+  }
+
+  form {
+    font-family: 'Inter', sans-serif;
+    width: 50%;
+
+    input[type=text],
+    [type=email],
+    textarea {
+      border: 0;
+      border-bottom: 1px solid #dbd8d7;
+      font-size: 15px;
+      margin: 15px 0;
+      padding: 20px;
+      width: 100%;
+    }
+
+    textarea {
+      background-color: #fbf8f7;
+      padding-bottom: 10rem;
+    }
+
+    button {
+      background-color: $primary-colour;
+      border: 0;
+      color: $main-text-colour;
+      font-size: 17px;
+      font-weight: bold;
+      padding: 10px;
+      text-align: center;
+    }
+  }
+
+  @media screen and(max-width: 1024px) {
+    @include flexCenter(column);
 
     .contact-text {
-        font-family: 'Inter', sans-serif;
-        color: #262626;
-        font-size: 40px;
-        font-weight: bold;
-        width: 30%;
+      margin-top: 2rem;
+      width: 80%;
     }
 
     form {
-        font-family: 'Inter', sans-serif;
-        width: 50%;
-        input[type=text], [type=email], textarea {
-            padding: 20px;
-            margin:15px 0;
-            border:0;
-            border-bottom:1px solid #DBD8D7;
-            width: 100%;
-            font-size: 15px;
-        }
-
-        textarea {
-            background-color: #FBF8F7;
-            padding-bottom: 10rem;
-        }
-
-        button {
-            padding: 10px;
-            font-size: 17px;
-            background-color: $primary-colour;
-            color: $main-text-colour;
-            font-weight: bold;
-            text-align: center;
-            border: 0;
-        }
+      width: 80%;
     }
-
-    @media screen and(max-width: 1024px) {
-        @include flexCenter(column);
-
-        .contact-text {
-            margin-top: 2rem;
-            width: 80%;
-        }
-
-        form {
-            width: 80%;
-        }
-    }
+  }
 }
 
 .foot-bar {
-    ul {
-        border-top: 0.01px solid #DFE1E6;
-        @include flexCenter(row);
-        list-style: none;
+  ul {
+    @include flexCenter(row);
 
-        li {
-            margin-top: 0.5rem;
-            i {
-                font-size: 1.5rem;
-                padding: 0.8rem;
-                color: $secondary-colour;
-            }
-        }
+    border-top: 0.01px solid #dfe1e6;
+    list-style: none;
+
+    li {
+      margin-top: 0.5rem;
+
+      i {
+        color: $secondary-colour;
+        font-size: 1.5rem;
+        padding: 0.8rem;
+      }
     }
+  }
 }
-

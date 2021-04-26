@@ -273,13 +273,13 @@
 }
 
 .portfolio .projects-container .project-1 {
-  background: linear-gradient(179.35deg, rgba(38, 38, 38, 0) 0.85%, rgba(38, 38, 38, 0.9) 84%), url(../images/ss1.png);
+  background: linear-gradient(179.35deg, rgba(38, 38, 38, 0) 0.85%, rgba(38, 38, 38, 0.9) 84%), url(../images/ss1.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 .portfolio .projects-container .project-2 {
-  background: linear-gradient(179.35deg, rgba(38, 38, 38, 0) 0.85%, rgba(38, 38, 38, 0.9) 84%), url(../images/RED.png);
+  background: linear-gradient(179.35deg, rgba(38, 38, 38, 0) 0.85%, rgba(38, 38, 38, 0.9) 84%), url(../images/RED.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }

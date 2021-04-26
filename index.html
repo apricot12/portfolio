@@ -18,22 +18,22 @@
         <nav class="navbar">
             <ul class="navbar-menu">
                 <li class="nav-menu-item">
-                    <a href="" class="nav-menu-link">
+                    <a href="#about-sec" class="nav-menu-link">
                         About
                     </a>
                 </li>
                 <li class="nav-menu-item">
-                    <a href="" class="nav-menu-link">
+                    <a href="#projects-sec" class="nav-menu-link">
                         Portfolio
                     </a>
                 </li>
                 <li class="nav-menu-item">
-                    <a href="" class="nav-menu-link">
+                    <a href="#skills-sec" class="nav-menu-link">
                         Skills
                     </a>
                 </li>
                 <li class="nav-menu-item">
-                    <a href="" class="nav-menu-link">
+                    <a href="#contact-sec" class="nav-menu-link">
                         Contact
                     </a>
                 </li>
@@ -42,7 +42,7 @@
     </header>
 
     <main>
-        <section class="about">
+        <section class="about" id="about-sec">
                 <div class="social-links">
                     <ul class="social-media-links">
                         <li>
@@ -122,7 +122,7 @@
                 </div>
         </section>
 
-        <section class="portfolio">
+        <section class="portfolio" id="projects-sec">
             <h2 class="portfolio-head">My Recent Works</h2>
             <div class="projects-container">
                 <div class="project-1 proj">
@@ -131,13 +131,22 @@
                     </h3>
                     <p class="proj-details">
                         An news article type website where users can write their own articles in multiple categories. Top articles in all categories will automatically appear in front page.
-                    </p>
-                    <div class="proj-tags">
-                        <p><span class="tag">Rails</span></p>
-                        <p><span class="tag">Ruby</span></p>
-                        <p><span class="tag">Postgresql</span></p>
-                        <p><span class="tag">Bootstrap</span></p>
-                    </div>
+                    </p>   
+                        <div class="proj-tags">
+                            <div class="lang-tools">
+                                <span class="tag">Rails</span>
+                                <span class="tag">Postgresql</span>
+                                <span class="tag">Bootstrap</span>
+                            </div>
+                            <div class="links">
+                                <button class="btn-link">
+                                    <a href="https://github.com/apricot12/Calisthenics-daily/tree/Feature" target="_blank" rel="noopener noreferrer">GitHub</a>
+                                </button>
+                                <button class="btn-link">
+                                    <a href="https://hidden-stream-62163.herokuapp.com/" target="_blank" rel="noopener noreferrer">Live</a>
+                                </button>
+                            </div>
+                        </div>
                 </div>
                 <div class="project-2 proj">
                     <h3 class="proj-title">
@@ -147,9 +156,19 @@
                         A directory of real estate properties that you can use to search and browse.
                     </p>
                     <div class="proj-tags">
-                        <p><span class="tag">HTML</span></p>
-                        <p><span class="tag">CSS</span></p>
-                        <p><span class="tag">Bootstrap</span></p>
+                        <div class="lang-tools">
+                            <span class="tag">HTML</span>
+                            <span class="tag">CSS</span>
+                            <span class="tag">Bootstrap</span>
+                        </div>
+                        <div class="links">
+                            <button class="btn-link">
+                                <a href="https://github.com/apricot12/HTML-CSS-Capstone-" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            </button>
+                            <button class="btn-link">
+                                <a href="https://apricot12.github.io/HTML-CSS-Capstone-/" target="_blank" rel="noopener noreferrer">Live</a>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="project-3 proj">
@@ -160,7 +179,14 @@
                         A tic tac toe game built using Ruby, playable in the terminal.
                     </p>
                     <div class="proj-tags">
-                        <p><span class="tag">Ruby</span></p>
+                        <div class="lang-tools">
+                            <span class="tag">Ruby</span>
+                        </div>
+                        <div class="links">
+                            <button class="btn-link">
+                                <a href="https://github.com/apricot12/tic-tac-toe" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="project-4 proj">
@@ -171,7 +197,14 @@
                         This is a web scraper built using ruby and some scraping gems to generate a list of top anime from myanimelist.net
                     </p>
                     <div class="proj-tags">
-                        <p><span class="tag">Ruby</span></p>
+                        <div class="lang-tools">
+                            <span class="tag">Ruby</span>
+                        </div>
+                        <div class="links">
+                            <button class="btn-link">
+                                <a href="https://github.com/apricot12/get-top-anime" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            </button>
+                        </div>
                     </div>
                 </div>
                 <div class="project-5 proj">
@@ -182,15 +215,22 @@
                         A rails application that mimicks reddit functionalities in terminal.
                     </p>
                     <div class="proj-tags">
-                        <p><span class="tag">Ruby</span></p>
-                        <p><span class="tag">Rails</span></p>
-                        <p><span class="tag">MySQL</span></p>
+                        <div class="lang-tools">
+                            <span class="tag">Rails</span>
+                            <span class="tag">Ruby</span>
+                            <span class="tag">Seqllite</span>
+                        </div>
+                        <div class="links">
+                            <button class="btn-link">
+                                <a href="https://github.com/apricot12/Micro-reddit" target="_blank" rel="noopener noreferrer">GitHub</a>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="skills">
+        <section class="skills" id="skills-sec">
             <div class="language">
                 <div class="sheader-container">
                     <svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -240,8 +280,7 @@
             </div>
         </section>
 
-        <section class="contact">
-            <div class="contact-form-container">
+        <section class="contact" id="contact-sec">
                 <p class="contact-text">I'm always interested about working on new projects, so please get in touch with me if you're interested.</p>
                 <form name="contact" method="POST" data-netlify="true">
                     <p>
@@ -257,7 +296,6 @@
                       <button type="submit">Get in touch</button>
                     </p>
                   </form>
-            </div>
         </section>
     </main>
 

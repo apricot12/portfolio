@@ -3,11 +3,12 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 .navbar {
   background-color: #3E3C3C;
-  height: 72px;
+  height: 5rem;
   position: fixed;
   top: 0;
   width: 100%;
@@ -119,25 +120,56 @@
   border: 2px solid #F55800;
 }
 
+@media screen and (max-width: 1024px) {
+  .about {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    padding-bottom: 2rem;
+  }
+  .about .social-media-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding-left: 0;
+    margin-top: 8rem;
+  }
+  .about .side-svg {
+    display: none;
+  }
+  .about .about-me {
+    width: 80%;
+  }
+}
+
 .portfolio h2 {
   color: #091E42;
   font-family: 'Crete Round', serif;
   font-size: 2.5rem;
   font-weight: 400;
-  padding-left: 4rem;
+  padding-left: 2.5rem;
   padding-top: 2rem;
 }
 
 .portfolio .projects-container {
-  padding: 4rem;
+  padding: 2.5rem;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
-  -ms-grid-rows: 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
+  -ms-grid-columns: (minmax(300px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px 20px;
-      grid-template-areas: ". . ." ". . .";
 }
 
 .portfolio .projects-container .proj {
@@ -155,7 +187,7 @@
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  padding-top: 15rem;
+  padding-top: 10rem;
 }
 
 .portfolio .projects-container .proj .proj-title, .portfolio .projects-container .proj .proj-details {
@@ -180,7 +212,14 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-bottom: 1rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
 }
 
 .portfolio .projects-container .proj .proj-tags span {
@@ -190,6 +229,46 @@
   padding: 0.5rem;
   text-align: center;
   margin: 0.5rem;
+}
+
+.portfolio .projects-container .proj .proj-tags .lang-tools {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.portfolio .projects-container .proj .proj-tags .links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.portfolio .projects-container .proj .proj-tags .links .btn-link {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  background-color: #F55800;
+  border-style: none;
+}
+
+.portfolio .projects-container .proj .proj-tags .links .btn-link:hover {
+  background: none;
+  border: 2px solid #F55800;
+}
+
+.portfolio .projects-container .proj .proj-tags .links a {
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
 }
 
 .portfolio .projects-container .project-1 {
@@ -272,11 +351,25 @@
   font-size: 22px;
 }
 
-.contact {
-  padding: 8rem;
+@media screen and (max-width: 1024px) {
+  .skills {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
-.contact .contact-form-container {
+.contact {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -290,9 +383,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-bottom: 1rem;
 }
 
-.contact .contact-form-container .contact-text {
+.contact .contact-text {
   font-family: 'Inter', sans-serif;
   color: #262626;
   font-size: 40px;
@@ -300,25 +394,26 @@
   width: 30%;
 }
 
-.contact .contact-form-container form {
+.contact form {
   font-family: 'Inter', sans-serif;
+  width: 50%;
 }
 
-.contact .contact-form-container form input[type=text], .contact .contact-form-container form [type=email], .contact .contact-form-container form textarea {
+.contact form input[type=text], .contact form [type=email], .contact form textarea {
   padding: 20px;
   margin: 15px 0;
   border: 0;
   border-bottom: 1px solid #DBD8D7;
-  width: 50rem;
+  width: 100%;
   font-size: 15px;
 }
 
-.contact .contact-form-container form textarea {
+.contact form textarea {
   background-color: #FBF8F7;
   padding-bottom: 10rem;
 }
 
-.contact .contact-form-container form button {
+.contact form button {
   padding: 10px;
   font-size: 17px;
   background-color: #F55800;
@@ -326,6 +421,31 @@
   font-weight: bold;
   text-align: center;
   border: 0;
+}
+
+@media screen and (max-width: 1024px) {
+  .contact {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact .contact-text {
+    margin-top: 2rem;
+    width: 80%;
+  }
+  .contact form {
+    width: 80%;
+  }
 }
 
 .foot-bar ul {

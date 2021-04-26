@@ -22,11 +22,12 @@ $bg-colour: #1C1A19;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 .navbar {
     background-color: #3E3C3C;
-    height: 72px;
+    height: 5rem;
     position: fixed;
     top: 0;
     width: 100%;
@@ -92,6 +93,27 @@ $bg-colour: #1C1A19;
 
         }
     }
+
+    @media screen and (max-width: 1024px) {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-bottom: 2rem;
+        .social-media-links {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding-left: 0;
+            margin-top: 8rem;
+        }
+        .side-svg {
+            display: none;
+        }
+
+        .about-me {
+            width: 80%;
+        }
+    }
 }
 
 .portfolio {
@@ -100,23 +122,19 @@ $bg-colour: #1C1A19;
         font-family: 'Crete Round', serif;
         font-size: 2.5rem;
         font-weight: 400;
-        padding-left: 4rem;
+        padding-left: 2.5rem;
         padding-top: 2rem;
     }
     
     .projects-container {
-        padding: 4rem;
+        padding: 2.5rem;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 20px 20px;
-        grid-template-areas:
-          ". . ."
-          ". . .";
 
         .proj {
             @include flex(column, space-between, flex-start);
-            padding-top: 15rem;
+            padding-top: 10rem;
             .proj-title, .proj-details {
                 color: $main-text-colour;
                 margin: 10px;
@@ -135,9 +153,13 @@ $bg-colour: #1C1A19;
                 margin-bottom: 1rem;
             }
 
+ 
+   
             .proj-tags {
                 display: flex;
-                padding-bottom: 1rem;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 100%;
                 span {
                     color: $main-text-colour;
                     font-family: 'Inter', sans-serif;
@@ -145,6 +167,35 @@ $bg-colour: #1C1A19;
                     padding: 0.5rem;
                     text-align: center;
                     margin: 0.5rem;
+                }
+
+                .lang-tools {
+                    display: flex;
+                    flex-direction: row;
+                }
+
+                .links {
+                    display: flex;
+                    flex-direction: row;
+                    .btn-link {
+                        padding: 0.5rem;
+                        margin: 0.5rem;
+                        background-color: $primary-colour;
+                        border-style: none;
+                    }
+
+                    .btn-link:hover {
+                        background: none;
+                        border: 2px solid $primary-colour;
+                    }
+
+                    a {
+                        color: $main-text-colour;
+                        font-family: 'Inter', sans-serif;
+                        font-size: 16px;
+                        font-weight: 400;
+                        text-decoration: none;
+                    }
                 }
             }
         }
@@ -212,47 +263,61 @@ $bg-colour: #1C1A19;
         }
     }
 
+    @media screen and (max-width: 1024px) { 
+        @include flexCenter(column)
+    }
 }
 
 .contact {
-    padding: 8rem;
-    .contact-form-container {
-        @include flex(row, space-around, center);
+    @include flex(row, space-around, center);
+    padding-bottom: 1rem;
+
+    .contact-text {
+        font-family: 'Inter', sans-serif;
+        color: #262626;
+        font-size: 40px;
+        font-weight: bold;
+        width: 30%;
+    }
+
+    form {
+        font-family: 'Inter', sans-serif;
+        width: 50%;
+        input[type=text], [type=email], textarea {
+            padding: 20px;
+            margin:15px 0;
+            border:0;
+            border-bottom:1px solid #DBD8D7;
+            width: 100%;
+            font-size: 15px;
+        }
+
+        textarea {
+            background-color: #FBF8F7;
+            padding-bottom: 10rem;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 17px;
+            background-color: $primary-colour;
+            color: $main-text-colour;
+            font-weight: bold;
+            text-align: center;
+            border: 0;
+        }
+    }
+
+    @media screen and(max-width: 1024px) {
+        @include flexCenter(column);
 
         .contact-text {
-            font-family: 'Inter', sans-serif;
-            color: #262626;
-            font-size: 40px;
-            font-weight: bold;
-            width: 30%;
+            margin-top: 2rem;
+            width: 80%;
         }
 
         form {
-            font-family: 'Inter', sans-serif;
-
-            input[type=text], [type=email], textarea {
-                padding: 20px;
-                margin:15px 0;
-                border:0;
-                border-bottom:1px solid #DBD8D7;
-                width: 50rem;
-                font-size: 15px;
-            }
-
-            textarea {
-                background-color: #FBF8F7;
-                padding-bottom: 10rem;
-            }
-
-            button {
-                padding: 10px;
-                font-size: 17px;
-                background-color: $primary-colour;
-                color: $main-text-colour;
-                font-weight: bold;
-                text-align: center;
-                border: 0;
-            }
+            width: 80%;
         }
     }
 }
@@ -273,6 +338,4 @@ $bg-colour: #1C1A19;
         }
     }
 }
-
-
 

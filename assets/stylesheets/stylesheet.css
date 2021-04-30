@@ -362,7 +362,7 @@
   padding: 0.5rem;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 768px) {
   .skills {
     -webkit-box-align: center;
         -ms-flex-align: center;
@@ -378,6 +378,33 @@
         -ms-flex-pack: center;
             justify-content: center;
     padding-bottom: 4rem;
+  }
+  .skills ul {
+    height: 200px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 999px) {
+  .skills {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding-bottom: 4rem;
+  }
+  .skills ul {
+    padding: 0 2rem 0 2rem;
   }
 }
 

@@ -290,10 +290,24 @@ $bg-colour: #1c1a19;
     }
   }
 
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 768px) {
     @include flexCenter(column);
 
     padding-bottom: 4rem;
+
+    ul {
+      height: 200px;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 999px) {
+    @include flexCenter(row);
+    justify-content: space-around;
+    padding-bottom: 4rem;
+
+    ul {
+      padding: 0 2rem 0 2rem;
+    }
   }
 }
 
